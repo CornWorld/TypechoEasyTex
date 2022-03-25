@@ -41,7 +41,7 @@ class TypechoEasyTex_Plugin implements Typecho_Plugin_Interface
         if(empty($dir) || $dir=='pluginUrl') $dir=Helper::options()->pluginUrl.'/TypechoEasyTex';
         echo <<<HTML
         <link href="{$dir}/katex/katex.min.css" rel="stylesheet">
-        <link href="{$dir}/katex/contrib/copy-tex.css" rel="stylesheet">
+        <link href="{$dir}/katex/contrib/copy-tex.min.css" rel="stylesheet">
         <style>.ketex{ font-size: 1.1em; text-indent: 0; text-rendering:0; }</style>
         HTML;
     }
@@ -51,7 +51,7 @@ class TypechoEasyTex_Plugin implements Typecho_Plugin_Interface
         if(empty($dir) || $dir=='pluginUrl') $dir=Helper::options()->pluginUrl.'/TypechoEasyTex';
         echo <<<HTML
         <script defer src="{$dir}/katex/katex.min.js"></script>
-        <script src="{$dir}/katex/contrib/copy-tex.js"></script>
+        <script src="{$dir}/katex/contrib/copy-tex.min.js"></script>
         <script defer src="{$dir}/katex/contrib/auto-render.min.js" onload="renderMathInElement(
             document.getElementsByClassName('post-content')[0],{
                 delimiters: [ {left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false} ],
