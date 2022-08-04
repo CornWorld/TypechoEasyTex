@@ -22,10 +22,14 @@ class TypechoEasyTex_Plugin implements Typecho_Plugin_Interface
     public static function activate() {
         Typecho_Plugin::factory('Widget_Archive')->header = array(__CLASS__, 'header');
         Typecho_Plugin::factory('Widget_Archive')->footer = array(__CLASS__, 'footer_page');
-        Typecho_Plugin::factory('admin/write-post.php')->content = array(__CLASS__, 'header');
+       	
+	/*
+	// TODO: Add adaption to hyperDown.js
+	Typecho_Plugin::factory('admin/write-post.php')->content = array(__CLASS__, 'header');
         Typecho_Plugin::factory('admin/write-post.php')->bottom = array(__CLASS__, 'footer_admin');
         Typecho_Plugin::factory('admin/write-page.php')->content = array(__CLASS__, 'header');
         Typecho_Plugin::factory('admin/write-page.php')->bottom = array(__CLASS__, 'footer_admin');
+    	*/
     }
     public static function deactivate() {}
 
@@ -49,12 +53,12 @@ class TypechoEasyTex_Plugin implements Typecho_Plugin_Interface
     
     public static function footer_admin() {
         $dir=Helper::options()->plugin('TypechoEasyTex')->url;
-        footer_common($dir,`document.getElementById('wmd-preview')`);
+        self::footer_common($dir,"document.getElementById('wmd-preview')");
     }
     
     public static function footer_page() {
         $dir=Helper::options()->plugin('TypechoEasyTex')->url;
-        footer_common($dir,`document.getElementsByClassName('post-content')[0]`);
+        self::footer_common($dir,"document.getElementsByClassName('post-content')[0]");
     }
 
     public static function footer_common($dir, $selectElement) {
