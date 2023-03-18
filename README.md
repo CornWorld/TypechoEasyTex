@@ -1,6 +1,6 @@
 ## TypechoEasyTex
 
-A easy plugin, using Katex.
+A easy plugin, using Katex v0.16.4.
 
 ### Usage(en_US)
 
