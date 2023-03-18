@@ -15,7 +15,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) {
  * @package TypechoEasyTex
  * @author CornWorld
  * @version 0.1
- * @link https://cornworld.com/TypechoEasyTex
+ * @link https://github.com/CornWorld/TypechoEasyTex
  */
 class TypechoEasyTex_Plugin implements Typecho_Plugin_Interface
 {
